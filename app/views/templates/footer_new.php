@@ -28,7 +28,7 @@
 </script>
 <script src="<?= BASEURL; ?>/assets/js/bootstrap.min.js"></script>
 
-<script src="<?= BASEURL; ?>/js/script.js"></script>
+<script src="<?= BASEURL; ?>/assets/js/script.js<?= '?' . time() ?>"></script>
 
 </body>
 

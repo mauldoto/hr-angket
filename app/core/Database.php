@@ -1,6 +1,7 @@
 <?php
 
-class Database{
+class Database
+{
 	private $host = DB_HOST;
 	private $user = DB_USER;
 	private $pass = DB_PASS;
@@ -11,17 +12,16 @@ class Database{
 
 	public function __construct()
 	{
-		$tsn = 'oci:dbname=//'.$this->host.'/'.$this->service;
+		$tsn = 'oci:dbname=//' . $this->host . '/' . $this->service;
 
 		$option = [
 			PDO::ATTR_PERSISTENT => true,
 			PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
 		];
 
-		try{
-			$this->dbh = new PDO($tsn,$this->user,$this->pass, $option);
-			var_dump("sukses");
-		}catch(PDOException $e){
+		try {
+			$this->dbh = new PDO($tsn, $this->user, $this->pass, $option);
+		} catch (PDOException $e) {
 			die($e->getMessage());
 		}
 	}
@@ -32,8 +32,9 @@ class Database{
 		$this->stmt = $this->dbh->prepare($query);
 	}
 
-	public function bind($param, $value, $type = null){
-		if(is_null($type)){
+	public function bind($param, $value, $type = null)
+	{
+		if (is_null($type)) {
 			switch (true) {
 				case is_int($value):
 					$type = PDO::PARAM_INT;
@@ -57,6 +58,11 @@ class Database{
 		$this->stmt->execute();
 	}
 
+	public function executeOracle($data)
+	{
+		$this->stmt->execute($data);
+	}
+
 	public function resultSet()
 	{
 		$this->execute();
@@ -73,5 +79,14 @@ class Database{
 	{
 		return $this->stmt->rowCount();
 	}
-}
 
+	public function beginTransaction()
+	{
+		return $this->dbh->beginTransaction();
+	}
+
+	public function rollback()
+	{
+		return $this->dbh->rollBack();
+	}
+}

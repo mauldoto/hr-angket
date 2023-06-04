@@ -4,13 +4,11 @@ class Angket extends Controller
 {
     public function index()
     {
-        $data['title'] = 'IT Asset - Maintain Department';
-        $data['menu'] = 'Department';
-        $data['menu-dsc'] = 'Maintain Department';
-        $data['rdata'] = $this->model('Department_model')->getAllDept();
-        $this->view('templates/header_a', $data);
-        $this->view('department/department-list', $data);
-        $this->view('templates/footer_a');
+        $data['title'] = 'HR Angket - isi angket';
+        $data['angket'] = $this->model('AngketModel')->getAllData();
+        $this->view('templates/header_new', $data);
+        $this->view('department/isi_angket', $data);
+        $this->view('templates/footer_new');
     }
 
     public function create()

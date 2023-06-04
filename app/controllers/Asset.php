@@ -24,6 +24,7 @@ class Asset extends Controller
 		$data['stts'] = [];
 		$data['asetkat'] = [];
 		$data['location'] = [];
+		$data['angket'] = $this->model('AngketModel')->getAllData();
 
 		$this->view('templates/header_new', $data);
 		$this->view('asset/test', $data);

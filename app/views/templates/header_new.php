@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace-skins.min.css" />
   <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace-rtl.min.css" />
   <style>
+    .main-container,
     .page-content {
       background-color: lightgray;
     }
@@ -26,6 +27,27 @@
     .form-content {
       background-color: white;
       padding: 1rem;
+    }
+
+    hr {
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+
+    .mb-10 {
+      margin-bottom: 20px;
+    }
+
+    .mb-5 {
+      margin-bottom: 10px;
+    }
+
+    .col-xs-1.angket {
+      width: 0%;
+    }
+
+    .pertanyaan {
+      font-size: 14px;
     }
   </style>
 </head>
@@ -53,5 +75,5 @@
         <div class="page-content">
 
           <div class="row">
-            <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+            <div class="col-xs-12 col-md-8 col-md-offset-2">
               <!-- PAGE CONTENT START -->
