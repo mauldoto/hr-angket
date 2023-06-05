@@ -53,10 +53,12 @@ class AngketModel
                 $_POSTMOD['no'] = $angket['NO'];
                 $_POSTMOD['jawaban'] = isset($_POST['angket_' . $angket['NO']]) ? $_POST['angket_' . $angket['NO']] : '';
                 $_POSTMOD['alasan'] = isset($_POST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']]) ? $_POST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']] : '';
+                $_POSTMOD['inputdate'] = strtoupper(date('d-M-y'));
+
                 $this->db->executeOracle($_POSTMOD);
             }
+            $this->db->commit();
         } catch (\Throwable $th) {
-            var_dump($th);
             $this->db->rollback();
             throw $th;
         }
@@ -69,9 +71,5 @@ class AngketModel
         // $this->db->executeOracle($data);
 
         return $this->db->rowCount();
-    }
-
-    public function rollback($nik)
-    {
     }
 }
