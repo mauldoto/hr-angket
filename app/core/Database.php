@@ -89,9 +89,4 @@ class Database
 	{
 		return $this->dbh->rollBack();
 	}
-
-	public function commit()
-	{
-		return $this->dbh->commit();
-	}
 }
