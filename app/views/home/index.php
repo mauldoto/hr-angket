@@ -26,7 +26,7 @@
 						</label>
 
 						<div class="form-group">
-							<input type="text" name="nik" id="empName" value="" class="form-control" required="true" placeholder="Contoh: H102023">
+							<select class="form-control nik-select2" name="nik" id="nikSelect2"></select>
 						</div>
 					</div>
 				</div>

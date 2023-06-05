@@ -45,4 +45,11 @@ class Home extends Controller
         header('location: ' . BASEURL . '/home');
         exit;
     }
+
+    public function select2()
+    {
+        $search = explode('=', $_SERVER['REQUEST_URI']);
+        $results = $this->model('KaryawanModel')->getSearchData($search[1]);
+        echo json_encode($results);
+    }
 }

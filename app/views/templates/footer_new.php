@@ -27,8 +27,33 @@
   if ('ontouchstart' in document.documentElement) document.write("<script src='<?= BASEURL; ?>/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="<?= BASEURL; ?>/assets/js/bootstrap.min.js"></script>
+<script src="<?= BASEURL; ?>/assets/js/select2.min.js"></script>
 
 <script src="<?= BASEURL; ?>/assets/js/script.js<?= '?' . time() ?>"></script>
+<script>
+  $(document).ready(function() {
+    $('.nik-select2').select2({
+      ajax: {
+        url: '<?= BASEURL ?>/home/select2',
+        dataType: 'json',
+        delay: 250,
+        data: function(params) {
+          return {
+            search: params.term, // search term
+          };
+        },
+        processResults: function(data) {
+          console.log(data)
+          // Transforms the top-level key of the response object from 'items' to 'results'
+          return {
+            results: data
+          };
+        }
+        // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
+      }
+    });
+  })
+</script>
 
 </body>
 

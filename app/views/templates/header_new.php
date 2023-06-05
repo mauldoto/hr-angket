@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
   <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace-skins.min.css" />
   <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace-rtl.min.css" />
+  <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/select2.min.css" />
   <style>
     .main-container,
     .page-content {
