@@ -61,7 +61,7 @@
 										<textarea style="margin-top: 3px; display: none;" id="alasan<?= $angket["NO"] ?>-2" type="text" class="form-control input-<?= $angket['NO'] ?>" name="alasan_angket_<?= $angket['NO'] ?>b" rows="3" cols="20"></textarea>
 									<?php endif; ?>
 								</label>
-								<?php if ($angket['P3'] != '-') : ?>
+								<?php if ($angket['P3']) : ?>
 									<label class="radio">
 										<input class="input-radio" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="3" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>3" value="c" required>(C) <?= $angket['P3'] ?>
 										<?php if ($angket['P3_REASON'] == 1) : ?>
@@ -69,7 +69,7 @@
 										<?php endif; ?>
 									</label>
 								<?php endif; ?>
-								<?php if ($angket['P4'] != '-') : ?>
+								<?php if ($angket['P4']) : ?>
 									<label class="radio">
 										<input class="input-radio" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="4" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>3" value="d" required>(D) <?= $angket['P4'] ?>
 										<?php if ($angket['P4_REASON'] == 1) : ?>
@@ -83,8 +83,8 @@
 				<?php endforeach; ?>
 			</section>
 
-			<div>
-				<button type="submit" class="btn btn-primary">Save</button>
+			<div class="col-xs-12">
+				<button type="submit" class="col-xs-12 btn btn-primary">Save</button>
 			</div>
 	</div>
 	</form>
