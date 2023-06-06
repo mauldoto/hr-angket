@@ -4,6 +4,7 @@ class KaryawanModel
 {
     private $db;
     private $table = 'empmasterepms';
+    private $tablePosition = 'mas_position';
 
     public function __construct()
     {
@@ -30,5 +31,14 @@ class KaryawanModel
         }, $results);
 
         return $results;
+    }
+
+    public function getDetail($nik)
+    {
+        $nik = strtoupper($nik);
+        $this->db->query("SELECT empcode, empname, job.description jabatan FROM " . $this->table . " emp, " . $this->tablePosition . " job WHERE emp.id_position = job.code and empcode='" . $nik . "'");
+        $result = $this->db->single();
+
+        return $result;
     }
 }

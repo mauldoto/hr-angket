@@ -8,7 +8,7 @@
 			?>
 		</div>
 
-		<form action="<?= BASEURL; ?>/home/inputmultiple" method="post">
+		<form id="formID" action="<?= BASEURL; ?>/home/inputmultiple" method="post">
 			<section class="title-section">
 				<div class="col-xs-12 col-sm-12 text-center mb-10">
 					<h3><strong>ANGKET KARYAWAN</strong></h3>
@@ -26,7 +26,38 @@
 						</label>
 
 						<div class="form-group">
-							<select class="form-control nik-select2" name="nik" id="nikSelect2"></select>
+							<?php if (TYPE_INPUT === 'SELECT') : ?>
+								<select class="form-control nik-select2" name="nik" id="nikSelect2" required></select>
+							<?php else : ?>
+								<input class="form-control mb-10" name="nik" placeholder="Contoh: H102023" required />
+								<button type="button" class="btn btn-primary btn-block" id="btnLoad">Load</button>
+							<?php endif; ?>
+							<input type="hidden" id="isLoaded" value="">
+						</div>
+
+					</div>
+
+					<div class="employee-detail" style="display: none;">
+						<label for="form-field-mask-1">
+							DETAIL
+						</label>
+
+						<div class="col-xs-12 mb-10">
+							<div class="">
+								<div class="col-xs-3">NIK</div>
+								<div class="col-xs-1">:</div>
+								<div class="col-xs-8" id="detailNIK"></div>
+							</div>
+							<div class="">
+								<div class="col-xs-3">NAMA</div>
+								<div class="col-xs-1">:</div>
+								<div class="col-xs-8" id="detailNAME"></div>
+							</div>
+							<div class="">
+								<div class="col-xs-3">JABATAN</div>
+								<div class="col-xs-1">:</div>
+								<div class="col-xs-8" id="detailJOB"></div>
+							</div>
 						</div>
 					</div>
 				</div>

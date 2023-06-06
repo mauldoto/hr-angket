@@ -5,7 +5,7 @@ class AngketModel
 
     private $db;
     private $table = 'hr_angket';
-    private $tableJawaban = 'hr_angket';
+    private $tableJawaban = 'hr_angket_jawaban';
 
     public function __construct()
     {
@@ -18,12 +18,22 @@ class AngketModel
         return $this->db->resultSet();
     }
 
+    public function getJawaban($nik)
+    {
+        $this->db->query("SELECT * FROM " . $this->tableJawaban . " WHERE NIK='" . $nik . "'");
+        return $this->db->resultSet();
+    }
+
     public function saveData($data)
     {
-        // var_dump($data);
-        $data['inputdate'] = null;
-        $query = "INSERT INTO hr_angket_jawaban (NIK, NO, JAWABAN, INPUTDATE, ALASAN) 
-				  VALUES(:nik, :no, :jawaban, :inputdate, :alasan)";
+        if (count($this->check($data['nik'])) > 0) {
+            $query = "UPDATE hr_angket_jawaban set JAWABAN=:jawaban, INPUTDATE=:inputdate, ALASAN=:alasan WHERE NIK=:nik and NO=:no";
+        } else {
+            $query = "INSERT INTO hr_angket_jawaban (NIK, NO, JAWABAN, INPUTDATE, ALASAN) 
+            VALUES(:nik, :no, :jawaban, :inputdate, :alasan)";
+        }
+
+        $data['inputdate'] = strtoupper(date('d-M-y'));
 
         $this->db->query($query);
 
@@ -39,10 +49,15 @@ class AngketModel
 
     public function saveDataMultipleRow($dataPOST)
     {
-        $data['angket'] = $this->getAllData();
 
-        $query = "INSERT INTO hr_angket_jawaban (NIK, NO, JAWABAN, INPUTDATE, ALASAN) 
-				  VALUES(:nik, :no, :jawaban, :inputdate, :alasan)";
+        if (count($this->check($dataPOST['nik'])) > 0) {
+            $query = "UPDATE hr_angket_jawaban set JAWABAN=:jawaban, INPUTDATE=:inputdate, ALASAN=:alasan WHERE NIK=:nik and NO=:no";
+        } else {
+            $query = "INSERT INTO hr_angket_jawaban (NIK, NO, JAWABAN, INPUTDATE, ALASAN) 
+            VALUES(:nik, :no, :jawaban, :inputdate, :alasan)";
+        }
+
+        $data['angket'] = $this->getAllData();
 
         $this->db->query($query);
 
@@ -71,5 +86,11 @@ class AngketModel
         // $this->db->executeOracle($data);
 
         return $this->db->rowCount();
+    }
+
+    public function check($nik)
+    {
+        $this->db->query("SELECT NIK FROM " . $this->tableJawaban . " WHERE NIK='" . $nik . "'");
+        return $this->db->resultSet();
     }
 }

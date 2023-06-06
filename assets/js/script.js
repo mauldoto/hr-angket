@@ -104,13 +104,96 @@ $(function () {
   $(".input-radio").change(function () {
     const no = $(this).data("no");
     const sort = $(this).data("sort");
-    console.log("#alasan" + no + "-" + sort);
+
     $(".input-" + no).slideUp();
     $(".input-" + no).attr("required", false);
     $("#alasan" + no + "-" + sort).slideDown();
     $("#alasan" + no + "-" + sort).attr("required", true);
   });
+
+  $(".nik-select2").change(function () {
+    getEmployeeDetails();
+  });
+
+  $("#btnLoad").click(function () {
+    getEmployeeDetails();
+  });
+
+  $("#formID").submit(function (event) {
+    event.preventDefault();
+    const isLoaded = $("#isLoaded").val();
+
+    if (!isLoaded) {
+      alert("NIK Belum di load");
+      return;
+    }
+
+    $(this)[0].submit();
+  });
 });
+
+// getEmployeeDetails();
+
+function getEmployeeDetails() {
+  $("#detailNIK").html("");
+  $("#detailNAME").html("");
+  $("#detailJOB").html("");
+  $("#isLoaded").val("");
+  $(".employee-detail").slideUp();
+
+  const baseUrl = document.querySelector("meta[name='baseURL']").content;
+  const nik = $("[name='nik']").val();
+
+  $.ajax({
+    url: baseUrl + "/home/detail?nik=" + nik,
+    type: "get",
+    success: function (results) {
+      const data = JSON.parse(results);
+      const karyawan = data.employee;
+      const jawaban = data.jawaban;
+      if (karyawan.EMPCODE) {
+        $("#detailNIK").html(karyawan.EMPCODE);
+        $("#detailNAME").html(karyawan.EMPNAME);
+        $("#detailJOB").html(karyawan.JABATAN);
+        $("#isLoaded").val(karyawan.EMPCODE);
+
+        $(".employee-detail").slideDown();
+      } else {
+        alert("Nik tidak terdaftar!!");
+      }
+
+      setAnswer(jawaban);
+    },
+  });
+}
+
+function setAnswer(jawaban) {
+  jawaban.forEach((iterasi) => {
+    console.log(
+      "input[name=angket_" + iterasi.NO + "][value='" + iterasi.JAWABAN + "']"
+    );
+    const option = document.querySelector(
+      "input[name=angket_" + iterasi.NO + "][value='" + iterasi.JAWABAN + "']"
+    );
+
+    if (option) {
+      option.checked = true;
+    }
+
+    const alasan = document.querySelector(
+      'textarea[name="alasan_angket_' + iterasi.NO + iterasi.JAWABAN + '"]'
+    );
+
+    if (alasan && iterasi.ALASAN) {
+      alasan.value = iterasi.ALASAN;
+      $(
+        'textarea[name="alasan_angket_' + iterasi.NO + iterasi.JAWABAN + '"]'
+      ).slideDown();
+    }
+  });
+
+  return;
+}
 
 function getAssetDetails(url) {
   $.ajax({

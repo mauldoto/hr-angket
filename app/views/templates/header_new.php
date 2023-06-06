@@ -8,6 +8,7 @@
 
   <meta name="description" content="overview &amp; stats" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <meta name="baseURL" content="<?= BASEURL; ?>" />
 
   <!-- bootstrap & fontawesome -->
   <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/bootstrap.min.css" />
