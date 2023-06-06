@@ -62,7 +62,7 @@
         <a href="<?= BASEURL; ?>" class="navbar-brand">
           <small>
             <!-- <i class="fa fa-leaf"></i> -->
-            HR Angket
+            HR Angket <?= NAMA_PT ?>
           </small>
         </a>
       </div>
