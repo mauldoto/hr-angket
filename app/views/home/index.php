@@ -73,13 +73,19 @@
 			<section>
 				<?php foreach ($data['angket'] as $angket) : ?>
 					<div class="col-xs-12 col-sm-12 mb-10">
+
 						<div>
 							<div class="col-xs-1 angket"><?= $angket['NO'] ?>.</div>
 							<div class="col-xs-11 mb-5 pertanyaan"><?= $angket['PERTANYAAN'] ?></div>
 						</div>
 
 						<div>
-							<div class="col-xs-11 col-xs-offset-1">
+							<div class="col-xs-1 offset-3 angket"><?= $angket['NO'] ?>.</div>
+							<div class="col-xs-10 mb-5 pertanyaan"><?= $angket['PERTANYAAN'] ?></div>
+						</div>
+
+						<div>
+							<div class="col-xs-11 offset-12">
 								<label class="radio">
 									<input class="input-radio" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="1" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>1" value="a" required>(A) <?= $angket['P1'] ?>
 									<?php if ($angket['P1_REASON'] == 1) : ?>

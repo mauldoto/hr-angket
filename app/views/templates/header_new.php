@@ -51,6 +51,14 @@
     .pertanyaan {
       font-size: 14px;
     }
+
+    .offset-3 {
+      margin-left: 6%;
+    }
+
+    .offset-12 {
+      margin-left: 12%;
+    }
   </style>
 </head>
 
