@@ -36,7 +36,6 @@ class Home extends Controller
 
     public function inputmultiple()
     {
-        var_dump(($_POST));
         $this->checkEmpCode($_POST['nik']);
 
         try {
