@@ -18,6 +18,18 @@ class AngketModel
         return $this->db->resultSet();
     }
 
+    public function getArrayData()
+    {
+        $arrMod = [];
+        $array = $this->getAllData();
+
+        foreach ($array as $key => $angket) {
+            if ($arrMod['']) {
+                # code...
+            }
+        }
+    }
+
     public function getJawaban($nik)
     {
         $this->db->query("SELECT * FROM " . $this->tableJawaban . " WHERE NIK='" . $nik . "'");
