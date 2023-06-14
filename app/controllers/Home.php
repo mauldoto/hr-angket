@@ -4,9 +4,9 @@ class Home extends Controller
 {
     public function index()
     {
-        // var_dump($this->model('KaryawanModel')->getDetail('2212241'));
+        // var_dump($this->model('AngketModel')->getArrayData());
         $data['title'] = 'HR Angket - isi angket';
-        $data['angket'] = $this->model('AngketModel')->getAllData();
+        $data['angket'] = $this->model('AngketModel')->getArrayData();
         $this->view('templates/header_new', $data);
         $this->view('home/index', $data);
         $this->view('templates/footer_new');

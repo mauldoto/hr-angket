@@ -24,10 +24,22 @@ class AngketModel
         $array = $this->getAllData();
 
         foreach ($array as $key => $angket) {
-            if ($arrMod['']) {
-                # code...
+            if ($angket['P0'] === "A. Pertanyaan untuk di jawab Kepala Afdeling") {
+                if (!isset($arrMod[0])) {
+                    $arrMod[0] = [];
+                }
+
+                array_push($arrMod[0], $angket);
+            } else {
+                if (!isset($arrMod[1])) {
+                    $arrMod[1] = [];
+                }
+
+                array_push($arrMod[1], $angket);
             }
         }
+
+        return $arrMod;
     }
 
     public function getJawaban($nik)
