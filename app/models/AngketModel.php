@@ -90,11 +90,15 @@ class AngketModel
             foreach ($data['angket'] as $key => $angket) {
                 $_POSTMOD['nik'] = $dataPOST['nik'];
                 $_POSTMOD['no'] = $angket['NO'];
-                $_POSTMOD['jawaban'] = isset($_POST['angket_' . $angket['NO']]) ? $_POST['angket_' . $angket['NO']] : '';
-                $_POSTMOD['alasan'] = isset($_POST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']]) ? $_POST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']] : '';
+                $_POSTMOD['jawaban'] = isset($dataPOST['angket_' . $angket['NO']]) ? $dataPOST['angket_' . $angket['NO']] : '';
+                $_POSTMOD['alasan'] = isset($dataPOST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']]) ? $dataPOST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']] : '';
                 $_POSTMOD['inputdate'] = strtoupper(date('d-M-y'));
 
                 $this->db->executeOracle($_POSTMOD);
+
+                if ($_POSTMOD['no'] == 1 && $_POSTMOD['b']) {
+                    break;
+                }
             }
             $this->db->commit();
         } catch (\Throwable $th) {
