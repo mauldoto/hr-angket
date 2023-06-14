@@ -36,7 +36,6 @@ $(function () {
           active: "1",
         },
         success: function (result) {
-          console.log(result);
           if (result === 1) {
             let msg =
               "Employee Successfully Assigned to " +
@@ -76,7 +75,6 @@ $(function () {
         location: $("#location").val(),
       },
       success: function (result) {
-        console.log(result);
         if (result === 1) {
           let msg = "Asset Created";
           setMessage("success", msg);
@@ -105,10 +103,22 @@ $(function () {
     const no = $(this).data("no");
     const sort = $(this).data("sort");
 
+    if (no == 1) {
+      if ($(this).val() === "a") {
+        $(".form-khusus-karyawan").slideDown();
+      } else {
+        $(".form-khusus-karyawan").slideUp();
+      }
+    }
+
     $(".input-" + no).slideUp();
     $(".input-" + no).attr("required", false);
     $("#alasan" + no + "-" + sort).slideDown();
     $("#alasan" + no + "-" + sort).attr("required", true);
+  });
+
+  $(".input-radio.kepala-afdeling").change(function () {
+    console.log("tesss");
   });
 
   $(".nik-select2").change(function () {
@@ -169,9 +179,6 @@ function getEmployeeDetails() {
 
 function setAnswer(jawaban) {
   jawaban.forEach((iterasi) => {
-    console.log(
-      "input[name=angket_" + iterasi.NO + "][value='" + iterasi.JAWABAN + "']"
-    );
     const option = document.querySelector(
       "input[name=angket_" + iterasi.NO + "][value='" + iterasi.JAWABAN + "']"
     );
@@ -189,6 +196,14 @@ function setAnswer(jawaban) {
       $(
         'textarea[name="alasan_angket_' + iterasi.NO + iterasi.JAWABAN + '"]'
       ).slideDown();
+    }
+
+    if (iterasi.NO == 1) {
+      if (iterasi.JAWABAN === "a") {
+        $(".form-khusus-karyawan").slideDown();
+      } else {
+        $(".form-khusus-karyawan").slideUp();
+      }
     }
   });
 

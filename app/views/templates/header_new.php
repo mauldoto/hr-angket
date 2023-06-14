@@ -59,6 +59,10 @@
     .offset-12 {
       margin-left: 12%;
     }
+
+    textarea {
+      width: 80% !important;
+    }
   </style>
 </head>
 
