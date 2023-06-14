@@ -106,8 +106,10 @@ $(function () {
     if (no == 1) {
       if ($(this).val() === "a") {
         $(".form-khusus-karyawan").slideDown();
+        $(".input-radio").attr("required", true);
       } else {
         $(".form-khusus-karyawan").slideUp();
+        $(".input-radio").attr("required", false);
       }
     }
 
@@ -201,8 +203,10 @@ function setAnswer(jawaban) {
     if (iterasi.NO == 1) {
       if (iterasi.JAWABAN === "a") {
         $(".form-khusus-karyawan").slideDown();
+        $(".input-radio").attr("required", true);
       } else {
         $(".form-khusus-karyawan").slideUp();
+        $(".input-radio").attr("required", false);
       }
     }
   });

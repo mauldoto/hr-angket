@@ -96,7 +96,7 @@ class AngketModel
 
                 $this->db->executeOracle($_POSTMOD);
 
-                if ($_POSTMOD['no'] == 1 && $_POSTMOD['b']) {
+                if ($_POSTMOD['no'] == 1 && $_POSTMOD['jawaban'] == 'b') {
                     break;
                 }
             }
