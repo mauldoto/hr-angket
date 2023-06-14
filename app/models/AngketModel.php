@@ -103,6 +103,7 @@ class AngketModel
                     break;
                 }
             }
+
             $this->db->commit();
         } catch (\Throwable $th) {
             $this->db->rollback();
