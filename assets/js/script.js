@@ -105,11 +105,11 @@ $(function () {
 
     if (no == 1) {
       if ($(this).val() === "a") {
-        $(".form-khusus-karyawan").slideDown();
-        $(".input-radio").attr("required", true);
+        // $(".form-khusus-karyawan").slideDown();
+        $(".input-radio-karyawan").attr("disabled", false);
       } else {
-        $(".form-khusus-karyawan").slideUp();
-        $(".input-radio").attr("required", false);
+        // $(".form-khusus-karyawan").slideUp();
+        $(".input-radio-karyawan").attr("disabled", true);
       }
     }
 
@@ -202,11 +202,11 @@ function setAnswer(jawaban) {
 
     if (iterasi.NO == 1) {
       if (iterasi.JAWABAN === "a") {
-        $(".form-khusus-karyawan").slideDown();
-        $(".input-radio").attr("required", true);
+        // $(".form-khusus-karyawan").slideDown();
+        $(".input-radio-karyawan").attr("disabled", false);
       } else {
-        $(".form-khusus-karyawan").slideUp();
-        $(".input-radio").attr("required", false);
+        // $(".form-khusus-karyawan").slideUp();
+        $(".input-radio-karyawan").attr("disabled", true);
       }
     }
   });

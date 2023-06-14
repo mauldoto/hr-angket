@@ -120,7 +120,7 @@
 					</div>
 				<?php endforeach; ?>
 
-				<div class="form-khusus-karyawan" style="display: none;">
+				<div class="form-khusus-karyawan">
 					<?php foreach ($data['angket'][1] as $key => $angket) : ?>
 						<div class="col-xs-12 col-sm-12 mb-10">
 
@@ -138,20 +138,20 @@
 							<div>
 								<div class="col-xs-11 offset-12">
 									<label class="radio">
-										<input class="input-radio" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="1" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>1" value="a" required>(A) <?= $angket['P1'] ?>
+										<input class="input-radio input-radio-karyawan" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="1" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>1" value="a" required>(A) <?= $angket['P1'] ?>
 										<?php if ($angket['P1_REASON'] == 1) : ?>
 											<textarea style="margin-top: 3px; display: none;" id="alasan<?= $angket["NO"] ?>-1" type="text" class="form-control input-<?= $angket['NO'] ?>" name="alasan_angket_<?= $angket['NO'] ?>a" rows="3" cols="5"></textarea>
 										<?php endif; ?>
 									</label>
 									<label class="radio">
-										<input class="input-radio" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="2" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>2" value="b" required>(B) <?= $angket['P2'] ?>
+										<input class="input-radio input-radio-karyawan" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="2" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>2" value="b" required>(B) <?= $angket['P2'] ?>
 										<?php if ($angket['P2_REASON'] == 1) : ?>
 											<textarea style="margin-top: 3px; display: none;" id="alasan<?= $angket["NO"] ?>-2" type="text" class="form-control input-<?= $angket['NO'] ?>" name="alasan_angket_<?= $angket['NO'] ?>b" rows="3" cols="5"></textarea>
 										<?php endif; ?>
 									</label>
 									<?php if ($angket['P3']) : ?>
 										<label class="radio">
-											<input class="input-radio" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="3" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>3" value="c" required>(C) <?= $angket['P3'] ?>
+											<input class="input-radio input-radio-karyawan" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="3" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>3" value="c" required>(C) <?= $angket['P3'] ?>
 											<?php if ($angket['P3_REASON'] == 1) : ?>
 												<textarea style="margin-top: 3px; display: none;" id="alasan<?= $angket["NO"] ?>-3" type="text" class="form-control input-<?= $angket['NO'] ?>" name="alasan_angket_<?= $angket['NO'] ?>c" rows="3" cols="5"></textarea>
 											<?php endif; ?>
@@ -159,7 +159,7 @@
 									<?php endif; ?>
 									<?php if ($angket['P4']) : ?>
 										<label class="radio">
-											<input class="input-radio" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="4" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>3" value="d" required>(D) <?= $angket['P4'] ?>
+											<input class="input-radio input-radio-karyawan" type="radio" data-no="<?= $angket['NO'] ?>" data-sort="4" name="angket_<?= $angket['NO'] ?>" id="radio<?= $angket["NO"] ?>3" value="d" required>(D) <?= $angket['P4'] ?>
 											<?php if ($angket['P4_REASON'] == 1) : ?>
 												<textarea style="margin-top: 3px; display: none;" id="alasan<?= $angket["NO"] ?>-4" type="text" class="form-control input-<?= $angket['NO'] ?>" name="alasan_angket_<?= $angket['NO'] ?>d" rows="3" cols="5"></textarea>
 											<?php endif; ?>
