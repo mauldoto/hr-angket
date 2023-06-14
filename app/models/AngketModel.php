@@ -73,20 +73,23 @@ class AngketModel
 
     public function saveDataMultipleRow($dataPOST)
     {
-
-        if (count($this->check($dataPOST['nik'])) > 0) {
-            $query = "UPDATE hr_angket_jawaban set JAWABAN=:jawaban, INPUTDATE=:inputdate, ALASAN=:alasan WHERE NIK=:nik and NO=:no";
-        } else {
-            $query = "INSERT INTO hr_angket_jawaban (NIK, NO, JAWABAN, INPUTDATE, ALASAN) 
-            VALUES(:nik, :no, :jawaban, :inputdate, :alasan)";
-        }
-
-        $data['angket'] = $this->getAllData();
-
-        $this->db->query($query);
-
         try {
+            $data['angket'] = $this->getAllData();
+            $delete = '';
+            $query = "INSERT INTO hr_angket_jawaban (NIK, NO, JAWABAN, INPUTDATE, ALASAN) 
+                VALUES(:nik, :no, :jawaban, :inputdate, :alasan)";
+
             $this->db->beginTransaction();
+
+            if (count($this->check($dataPOST['nik'])) > 0) {
+                // $queryDelete = "UPDATE hr_angket_jawaban set JAWABAN=:jawaban, INPUTDATE=:inputdate, ALASAN=:alasan WHERE NIK=:nik and NO=:no";
+                $queryDelete = "DELETE FROM " . $this->tableJawaban . " WHERE NIK='" . $dataPOST['nik'] . "'";
+                $delete = $this->db->query(($queryDelete));
+                $this->db->execute();
+            }
+
+            $this->db->query($query);
+
             foreach ($data['angket'] as $key => $angket) {
                 $_POSTMOD['nik'] = $dataPOST['nik'];
                 $_POSTMOD['no'] = $angket['NO'];
