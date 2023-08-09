@@ -115,47 +115,51 @@
             background-color: salmon;
         }
 
-        .col-xs-3.saran {
+        label * {
+            cursor: pointer;
+        }
+
+        .saran {
             padding-top: 10px;
             border-radius: 10%;
         }
 
-        .col-xs-3.saran.saran-pelayanan:hover {
+        .saran.saran-pelayanan:hover {
             background-color: powderblue;
 
         }
 
-        .col-xs-3.saran.saran-hidangan:hover {
+        .saran.saran-hidangan:hover {
             background-color: navajowhite;
 
         }
 
-        .col-xs-3.saran.saran-fasilitas:hover {
+        .saran.saran-fasilitas:hover {
             background-color: thistle;
 
         }
 
-        .col-xs-3.saran.saran-kebersihan:hover {
+        .saran.saran-kebersihan:hover {
             background-color: lightsalmon;
 
         }
 
-        .col-xs-3.saran.saran-pelayanan.active {
+        .saran.saran-pelayanan.active {
             background-color: powderblue;
 
         }
 
-        .col-xs-3.saran.saran-hidangan.active {
+        .saran.saran-hidangan.active {
             background-color: navajowhite;
 
         }
 
-        .col-xs-3.saran.saran-fasilitas.active {
+        .saran.saran-fasilitas.active {
             background-color: thistle;
 
         }
 
-        .col-xs-3.saran.saran-kebersihan.active {
+        .saran.saran-kebersihan.active {
             background-color: lightsalmon;
 
         }

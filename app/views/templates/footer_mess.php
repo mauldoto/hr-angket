@@ -29,7 +29,6 @@
 <script src="<?= BASEURL; ?>/assets/js/bootstrap.min.js"></script>
 <script src="<?= BASEURL; ?>/assets/js/select2.min.js"></script>
 
-<!-- <script src="<?= BASEURL; ?>/assets/js/script.js<?= '?' . time() ?>"></script> -->
 <script src="<?= BASEURL; ?>/assets/js/mess.js<?= '?' . time() ?>"></script>
 
 </body>

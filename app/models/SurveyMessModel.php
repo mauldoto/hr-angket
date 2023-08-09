@@ -19,17 +19,30 @@ class SurveyMessModel
         $this->db->query($query);
 
         $_POSTMOD['inputdate'] = strtoupper(date('d-M-y'));
-        $_POSTMOD['pelayanan'] = $data['saran'] == 'pelayanan' ? '1' : '0';
-        $_POSTMOD['hidangan'] = $data['saran'] == 'hidangan' ? '1' : '0';
-        $_POSTMOD['kebersihan'] = $data['saran'] == 'kebersihan' ? '1' : '0';
-        $_POSTMOD['fasilitas'] = $data['saran'] == 'fasilitas' ? '1' : '0';
-        $_POSTMOD['id'] = $data['kepuasan'];
-        // $this->db->bind('nik', $data['nik']);
-        // $this->db->bind('no', $data['no']);
-        // $this->db->bind('jawaban', $data['jawaban']);
-        // $this->db->bind('inputdate', date('dmY'));
-        // $this->db->bind('alasan', $data['alasan']);
+        $_POSTMOD['pelayanan'] = $data['pelayanan'];
+        $_POSTMOD['hidangan'] = $data['hidangan'];
+        $_POSTMOD['kebersihan'] = $data['kebersihan'];
+        $_POSTMOD['fasilitas'] = $data['fasilitas'];
+        $_POSTMOD['id'] = $this->createIds() + 1;
+
+        var_dump($_POSTMOD);
+        // $this->db->bind('inputdate', strtoupper(date('d-M-y')));
+        // $this->db->bind('pelayanan', $data['pelayanan']);
+        // $this->db->bind('hidangan', $data['hidangan']);
+        // $this->db->bind('kebersihan', date('kebersihan'));
+        // $this->db->bind('fasilitas', $data['fasilitas']);
+        // $this->db->bind('ids', $this->createIds() + 1);
         $this->db->executeOracle($_POSTMOD);
+
+        return $this->db->rowCount();
+    }
+
+    public function createIds()
+    {
+        $query = "SELECT id FROM hr_kepuasanpelanggan";
+
+        $this->db->query($query);
+        $this->db->execute();
 
         return $this->db->rowCount();
     }
