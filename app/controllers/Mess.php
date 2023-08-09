@@ -5,20 +5,20 @@ class Mess extends Controller
     public function index()
     {
         $this->view('templates/header_mess');
-        $this->view('mess/index');
+        $this->view('mess/index_v2');
         $this->view('templates/footer_mess');
     }
 
     public function input()
     {
-
-        if (!$_POST['kepuasan']) {
-            Flasher::setMessage('failed', 'Pilih salah satu opsi', 'danger');
+        $data = json_decode($_POST['submited_data'], true);
+        if (count($data) < 4) {
+            Flasher::setMessage('failed', 'Semua kategori belum diberi penilaian', 'danger');
             header('location: ' . BASEURL . '/mess');
             exit;
         }
 
-        if ($this->model('SurveyMessModel')->saveData($_POST) <= 0) {
+        if ($this->model('SurveyMessModel')->saveData($data) <= 0) {
             Flasher::setMessage('Failed,', 'Check your input', 'danger');
             header('location: ' . BASEURL . '/mess');
             exit;
