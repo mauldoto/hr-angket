@@ -1,6 +1,6 @@
 <?php
 
-class Home extends Controller
+class Angket extends Controller
 {
     public function index()
     {
@@ -8,7 +8,7 @@ class Home extends Controller
         $data['title'] = 'HR Angket - isi angket';
         $data['angket'] = $this->model('AngketModel')->getArrayData();
         $this->view('templates/header_new', $data);
-        $this->view('home/index', $data);
+        $this->view('angket/index', $data);
         $this->view('templates/footer_new');
     }
 
@@ -24,13 +24,13 @@ class Home extends Controller
             $_POSTMOD['alasan'] = isset($_POST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']]) ? $_POST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']] : '';
             if ($this->model('AngketModel')->saveData($_POSTMOD) <= 0) {
                 Flasher::setMessage('Failed,', 'Check your input', 'danger');
-                header('location: ' . BASEURL . '/home');
+                header('location: ' . BASEURL . '/angket');
                 exit;
             }
         }
 
         Flasher::setMessage('Successfully', 'Created', 'success');
-        header('location: ' . BASEURL . '/home');
+        header('location: ' . BASEURL . '/angket');
         exit;
     }
 
@@ -42,12 +42,12 @@ class Home extends Controller
             $this->model('AngketModel')->saveDataMultipleRow($_POST);
         } catch (\Throwable $th) {
             Flasher::setMessage('Failed,', 'Check your input', 'danger');
-            header('location: ' . BASEURL . '/home');
+            header('location: ' . BASEURL . '/angket');
             exit;
         }
 
         Flasher::setMessage('Successfully', 'Created', 'success');
-        header('location: ' . BASEURL . '/home');
+        header('location: ' . BASEURL . '/angket');
         exit;
     }
 
@@ -71,7 +71,7 @@ class Home extends Controller
         $result = $this->model('KaryawanModel')->getDetail($nik);
         if (!$result || count($result) <= 0) {
             Flasher::setMessage('Failed', 'NIK Tidak Terdaftar!!!', 'danger');
-            header('location: ' . BASEURL . '/home');
+            header('location: ' . BASEURL . '/angket');
             exit;
         }
 
