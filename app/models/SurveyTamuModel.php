@@ -1,6 +1,6 @@
 <?php
 
-class SurveyMessModel
+class SurveyTamuModel
 {
 
     private $db;

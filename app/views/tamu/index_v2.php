@@ -8,7 +8,7 @@
             ?>
         </div>
 
-        <form id="formID" action="<?= BASEURL; ?>/mess/input" method="post">
+        <form id="formID" action="<?= BASEURL; ?>/tamu/input" method="post">
             <section class="title-section">
                 <div class="col-xs-12 col-sm-12 text-center mb-10">
                     <h3><strong>SURVEY KEPUASAN TAMU MESS</strong></h3>
