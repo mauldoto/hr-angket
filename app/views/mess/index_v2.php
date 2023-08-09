@@ -12,7 +12,7 @@
             <section class="title-section">
                 <div class="col-xs-12 col-sm-12 text-center mb-10">
                     <h3><strong>SURVEY KEPUASAN TAMU MESS</strong></h3>
-                    <strong>PT. GRAHA CAKRA MULIA</strong>
+                    <h4>PT. GRAHA CAKRA MULIA</h4>
                 </div>
             </section>
 
