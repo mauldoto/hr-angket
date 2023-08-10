@@ -59,7 +59,7 @@
                 </div>
             </section>
 
-            <section class="mid-section" style="display: none;">
+            <section class="mid-section">
                 <div class="col-xs-12 col-sm-12 text-center mb-10">
                     <strong class="col-xs-8 col-xs-offset-2">Puaskah anda?</strong>
                 </div>
@@ -68,7 +68,7 @@
                         <div class="kepuasan sangat-puas" data-value="2" data-id="1" data-text="SANGAT PUAS">
                             <label class="label-kepuasan" data-value="" data-text="" for="kepuasan1">
                                 <img class="img-sangat-puas" src="<?= BASEURL; ?>/assets/icons/sangat_puas.png" alt="" width="100px">
-                                <h4 id="textKepuasan1" class="text-sangat-puas text-kepuasan"></h4>
+                                <h4 id="textKepuasan1" class="text-sangat-puas text-kepuasan">SANGAT PUAS</h4>
                             </label>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         <div class="kepuasan cukup-puas" data-value="1" data-id="2" data-text="CUKUP PUAS">
                             <label class="label-kepuasan" data-value="" data-text="" for="kepuasan2">
                                 <img class="img-cukup-puas" src="<?= BASEURL; ?>/assets/icons/cukup_puas.png" alt="" width="100px">
-                                <h4 id="textKepuasan2" class="text-cukup-puas text-kepuasan"></h4>
+                                <h4 id="textKepuasan2" class="text-cukup-puas text-kepuasan">CUKUP PUAS</h4>
                             </label>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         <div class="kepuasan tidak-puas" data-value="0" data-id="3" data-text="TIDAK PUAS">
                             <label class="label-kepuasan" data-value="" data-text="" for="kepuasan3">
                                 <img class="img-tidak-puas" src="<?= BASEURL; ?>/assets/icons/tidak_puas.png" alt="" width="100px">
-                                <h4 id="textKepuasan3" class="text-tidak-puas text-kepuasan"></h4>
+                                <h4 id="textKepuasan3" class="text-tidak-puas text-kepuasan">TIDAK PUAS</h4>
                             </label>
                         </div>
                     </div>

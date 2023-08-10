@@ -18,7 +18,7 @@ class SurveyTamuModel
 
         $this->db->query($query);
 
-        $_POSTMOD['inputdate'] = strtoupper(date('d-M-y'));
+        $_POSTMOD['inputdate'] = date("dmY");
         $_POSTMOD['pelayanan'] = $data['pelayanan'];
         $_POSTMOD['hidangan'] = $data['hidangan'];
         $_POSTMOD['kebersihan'] = $data['kebersihan'];

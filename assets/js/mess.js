@@ -5,14 +5,20 @@ window.onload = () => {
   const kepuasan = document.querySelectorAll(".kepuasan");
   kepuasan.forEach((element) => {
     element.addEventListener("click", function () {
+      let kategori = document.querySelector(".saran.active");
+      if (!kategori) {
+        alert("pilih kategori terlebih dahulu!");
+        return;
+      }
+
+      kategori = kategori.dataset.value;
+
       deleteActiveClass();
-      deleteTextKepuasan();
+      // deleteTextKepuasan();
       this.classList.add("active");
 
       document.querySelector("#textKepuasan" + this.dataset.id).innerHTML =
         this.dataset.text;
-
-      const kategori = document.querySelector(".saran.active").dataset.value;
 
       masterData[kategori] = this.dataset.value;
 
@@ -39,9 +45,9 @@ window.onload = () => {
       saran.forEach((elmSaran) => elmSaran.classList.remove("active"));
       this.classList.add("active");
 
-      $(".mid-section").slideUp();
+      // $(".mid-section").slideUp();
       deleteActiveClass();
-      deleteTextKepuasan();
+      // deleteTextKepuasan();
 
       if (
         Object.keys(masterData).length > 0 &&
@@ -57,7 +63,7 @@ window.onload = () => {
         ).innerHTML = selectedSatisfy.dataset.text;
       }
 
-      $(".mid-section").slideDown();
+      // $(".mid-section").slideDown();
     });
   });
 
