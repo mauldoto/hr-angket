@@ -124,7 +124,7 @@
             border-radius: 10%;
         }
 
-        .saran.saran-pelayanan:hover {
+        /* .saran.saran-pelayanan:hover {
             background-color: powderblue;
 
         }
@@ -162,7 +162,7 @@
         .saran.saran-kebersihan.active {
             background-color: lightsalmon;
 
-        }
+        } */
 
         .radio-kepuasan {
             position: absolute;

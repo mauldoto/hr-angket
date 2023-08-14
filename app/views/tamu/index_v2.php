@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-xs-8 text-center">
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan sangat-puas" data-value="2" data-id="1" data-text="SANGAT PUAS">
+                                <div class="kepuasan sangat-puas" data-key="pelayanan" data-value="2" data-id="1" data-text="SANGAT PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan1">
                                         <img class="img-sangat-puas" src="<?= BASEURL; ?>/assets/icons/sangat_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan1" class="text-sangat-puas text-kepuasan">SANGAT PUAS</h4>
@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan cukup-puas" data-value="1" data-id="2" data-text="CUKUP PUAS">
+                                <div class="kepuasan cukup-puas" data-key="pelayanan" data-value="1" data-id="2" data-text="CUKUP PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan2">
                                         <img class="img-cukup-puas" src="<?= BASEURL; ?>/assets/icons/cukup_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan2" class="text-cukup-puas text-kepuasan">CUKUP PUAS</h4>
@@ -51,7 +51,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan tidak-puas" data-value="0" data-id="3" data-text="TIDAK PUAS">
+                                <div class="kepuasan tidak-puas" data-key="pelayanan" data-value="0" data-id="3" data-text="TIDAK PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan3">
                                         <img class="img-tidak-puas" src="<?= BASEURL; ?>/assets/icons/tidak_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan3" class="text-tidak-puas text-kepuasan">TIDAK PUAS</h4>
@@ -71,7 +71,7 @@
                         </div>
                         <div class="col-xs-8 text-center">
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan sangat-puas" data-value="2" data-id="1" data-text="SANGAT PUAS">
+                                <div class="kepuasan sangat-puas" data-key="hidangan" data-value="2" data-id="1" data-text="SANGAT PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan1">
                                         <img class="img-sangat-puas" src="<?= BASEURL; ?>/assets/icons/sangat_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan1" class="text-sangat-puas text-kepuasan">SANGAT PUAS</h4>
@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan cukup-puas" data-value="1" data-id="2" data-text="CUKUP PUAS">
+                                <div class="kepuasan cukup-puas" data-key="hidangan" data-value="1" data-id="2" data-text="CUKUP PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan2">
                                         <img class="img-cukup-puas" src="<?= BASEURL; ?>/assets/icons/cukup_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan2" class="text-cukup-puas text-kepuasan">CUKUP PUAS</h4>
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan tidak-puas" data-value="0" data-id="3" data-text="TIDAK PUAS">
+                                <div class="kepuasan tidak-puas" data-key="hidangan" data-value="0" data-id="3" data-text="TIDAK PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan3">
                                         <img class="img-tidak-puas" src="<?= BASEURL; ?>/assets/icons/tidak_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan3" class="text-tidak-puas text-kepuasan">TIDAK PUAS</h4>
@@ -107,7 +107,7 @@
                         </div>
                         <div class="col-xs-8 text-center">
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan sangat-puas" data-value="2" data-id="1" data-text="SANGAT PUAS">
+                                <div class="kepuasan sangat-puas" data-key="fasilitas" data-value="2" data-id="1" data-text="SANGAT PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan1">
                                         <img class="img-sangat-puas" src="<?= BASEURL; ?>/assets/icons/sangat_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan1" class="text-sangat-puas text-kepuasan">SANGAT PUAS</h4>
@@ -115,7 +115,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan cukup-puas" data-value="1" data-id="2" data-text="CUKUP PUAS">
+                                <div class="kepuasan cukup-puas" data-key="fasilitas" data-value="1" data-id="2" data-text="CUKUP PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan2">
                                         <img class="img-cukup-puas" src="<?= BASEURL; ?>/assets/icons/cukup_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan2" class="text-cukup-puas text-kepuasan">CUKUP PUAS</h4>
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan tidak-puas" data-value="0" data-id="3" data-text="TIDAK PUAS">
+                                <div class="kepuasan tidak-puas" data-key="fasilitas" data-value="0" data-id="3" data-text="TIDAK PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan3">
                                         <img class="img-tidak-puas" src="<?= BASEURL; ?>/assets/icons/tidak_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan3" class="text-tidak-puas text-kepuasan">TIDAK PUAS</h4>
@@ -143,7 +143,7 @@
                         </div>
                         <div class="col-xs-8 text-center">
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan sangat-puas" data-value="2" data-id="1" data-text="SANGAT PUAS">
+                                <div class="kepuasan sangat-puas" data-key="kebersihan" data-value="2" data-id="1" data-text="SANGAT PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan1">
                                         <img class="img-sangat-puas" src="<?= BASEURL; ?>/assets/icons/sangat_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan1" class="text-sangat-puas text-kepuasan">SANGAT PUAS</h4>
@@ -151,7 +151,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan cukup-puas" data-value="1" data-id="2" data-text="CUKUP PUAS">
+                                <div class="kepuasan cukup-puas" data-key="kebersihan" data-value="1" data-id="2" data-text="CUKUP PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan2">
                                         <img class="img-cukup-puas" src="<?= BASEURL; ?>/assets/icons/cukup_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan2" class="text-cukup-puas text-kepuasan">CUKUP PUAS</h4>
@@ -159,7 +159,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-4 parent-kepuasan">
-                                <div class="kepuasan tidak-puas" data-value="0" data-id="3" data-text="TIDAK PUAS">
+                                <div class="kepuasan tidak-puas" data-key="kebersihan" data-value="0" data-id="3" data-text="TIDAK PUAS">
                                     <label class="label-kepuasan" data-value="" data-text="" for="kepuasan3">
                                         <img class="img-tidak-puas" src="<?= BASEURL; ?>/assets/icons/tidak_puas.png" alt="" width="50px">
                                         <h4 id="textKepuasan3" class="text-tidak-puas text-kepuasan">TIDAK PUAS</h4>
