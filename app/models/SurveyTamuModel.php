@@ -18,7 +18,7 @@ class SurveyTamuModel
 
         $this->db->query($query);
 
-        $_POSTMOD['inputdate'] = date("dmY");
+        $_POSTMOD['inputdate'] = strtoupper(date('d-M-y'));
         $_POSTMOD['pelayanan'] = $data['pelayanan'];
         $_POSTMOD['hidangan'] = $data['hidangan'];
         $_POSTMOD['kebersihan'] = $data['kebersihan'];
@@ -34,5 +34,13 @@ class SurveyTamuModel
         $this->db->executeOracle($_POSTMOD);
 
         return $this->db->rowCount();
+    }
+
+    public function getDataByDate($date)
+    {
+        $reqDate = date_create_from_format("m/d/Y", $date);
+        $reqDate = strtoupper(date_format($reqDate, 'd-M-y'));
+        $this->db->query("SELECT * FROM " . $this->table . " WHERE TANGGAL ='" . $reqDate . "'");
+        return $this->db->resultSet();
     }
 }
