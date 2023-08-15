@@ -28,4 +28,11 @@ class Tamu extends Controller
         header('location: ' . BASEURL . '/tamu');
         exit;
     }
+
+    public function report()
+    {
+        $date = explode('=', $_SERVER['REQUEST_URI']);
+        $data = $this->model('SurveyTamuModel')->getDataByDate($date[1]);
+        echo json_encode(["data" => $data]);
+    }
 }
