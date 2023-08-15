@@ -27,6 +27,7 @@
   if ('ontouchstart' in document.documentElement) document.write("<script src='<?= BASEURL; ?>/assets/js/jquery.mobile.custom.min.js'>" + "<" + "/script>");
 </script>
 <script src="<?= BASEURL; ?>/assets/js/bootstrap.min.js"></script>
+<script src="<?= BASEURL; ?>/assets/js/jquery-ui.min.js"></script>
 <script src="<?= BASEURL; ?>/assets/js/select2.min.js"></script>
 
 <script src="<?= BASEURL; ?>/assets/js/mess.js<?= '?' . time() ?>"></script>

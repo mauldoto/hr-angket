@@ -31,6 +31,13 @@
             padding: 1rem;
         }
 
+        .table-content {
+            margin-top: 3rem;
+            padding: 1rem;
+            background-color: white;
+
+        }
+
         hr {
             margin-top: 0px;
             margin-bottom: 10px;
@@ -113,10 +120,6 @@
 
         .kepuasan.tidak-puas.active {
             background-color: salmon;
-        }
-
-        label * {
-            cursor: pointer;
         }
 
         .saran {
