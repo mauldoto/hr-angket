@@ -9,7 +9,7 @@ define('DB_SERVICE', 'EPMS');
 
 define('TYPE_INPUT', 'SELECT');
 
-define('NAMA_PT', ''); // diisi nama PT misalkan: PT GCM, SMG, SLM, SBE, SJE
+define('NAMA_PT', 'PT. GRAHA CAKRA MULIA'); // diisi nama PT misalkan: PT GCM, SMG, SLM, SBE, SJE
 
 
 // define('DB_NAME', 'test');
