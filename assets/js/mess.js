@@ -249,6 +249,26 @@ window.onload = () => {
     const config = {
       type: "pie",
       data: data,
+      plugins: [ChartDataLabels],
+      options: {
+        plugins: {
+          datalabels: {
+            color: "white",
+            labels: {
+              value: {
+                color: "white",
+                font: {
+                  weight: "bold",
+                  size: 18,
+                },
+              },
+            },
+            formatter: function (value, context) {
+              return value + " Org";
+            },
+          },
+        },
+      },
     };
 
     var ctx = document
