@@ -96,7 +96,17 @@ window.onload = () => {
     });
   }
 
-  $("#datepicker").datepicker();
+  $("#datepicker").daterangepicker({
+    startDate: moment().subtract(1, "months"),
+    endDate: moment(),
+    maxDate: moment(),
+    opens: "center",
+  });
+
+  $("#datepicker").on("apply.daterangepicker", function (ev, picker) {
+    $("#startDate").val(picker.startDate.format("DDMMYYYY"));
+    $("#endDate").val(picker.endDate.format("DDMMYYYY"));
+  });
 
   function renderResults(data) {
     const master = {
@@ -120,4 +130,37 @@ window.onload = () => {
 
     document.querySelector(".body-table").innerHTML = parentElm;
   }
+
+  const data = {
+    labels: ["Red", "Blue", "Yellow"],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [300, 50, 100],
+        backgroundColor: [
+          "rgb(255, 99, 132)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+  const config = {
+    type: "pie",
+    data: data,
+  };
+
+  var ctx = document.querySelector(".chart1").getContext("2d");
+  var myChart1 = new Chart(ctx, config);
+
+  var ctx = document.querySelector(".chart2").getContext("2d");
+  var myChart2 = new Chart(ctx, config);
+
+  var ctx = document.querySelector(".chart3").getContext("2d");
+  var myChart3 = new Chart(ctx, config);
+
+  var ctx = document.querySelector(".chart4").getContext("2d");
+  var myChart4 = new Chart(ctx, config);
 };

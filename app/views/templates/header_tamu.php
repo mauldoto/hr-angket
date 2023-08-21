@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace-skins.min.css" />
     <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace-rtl.min.css" />
     <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/select2.min.css" />
+    <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/daterangepicker.min.css" />
     <style>
         .main-container,
         .page-content {
@@ -125,6 +126,15 @@
         .saran {
             padding-top: 10px;
             border-radius: 10%;
+        }
+
+        .padd {
+            padding-top: 4rem;
+        }
+
+        .container-chart {
+            display: block;
+            margin: 0 auto;
         }
 
         /* .saran.saran-pelayanan:hover {

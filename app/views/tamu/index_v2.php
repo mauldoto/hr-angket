@@ -25,13 +25,16 @@
             <section class="suggestion-section">
                 <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1 text-center mb-10">
                     <div class="col-xs-12">
-                        <div class="col-xs-4 saran-option">
+                        <div class="col-xs-3 saran-option">
                             <div class="saran saran-pelayanan" data-value="pelayanan">
                                 <label class="label-kategori" for="saran1">
                                     <img src="<?= BASEURL; ?>/assets/icons/pelayanan.png" alt="pelayanan" width="80px">
                                     <h5 class="text-pelayanan text-saran">Pelayanan</h5>
                                 </label>
                             </div>
+                        </div>
+                        <div class="col-xs-1 padd">
+                            <img src="<?= BASEURL; ?>/assets/icons/icon-arrow.png" alt="">
                         </div>
                         <div class="col-xs-8 text-center">
                             <div class="col-xs-4 parent-kepuasan">
@@ -61,13 +64,16 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <div class="col-xs-4 saran-option">
+                        <div class="col-xs-3 saran-option">
                             <div class="saran saran-hidangan" data-value="hidangan">
                                 <label class="label-kategori" for="saran1">
                                     <img src="<?= BASEURL; ?>/assets/icons/hidangan.png" alt="hidangan" width="80px">
                                     <h5 class="text-hidangan text-saran">Hidangan</h5>
                                 </label>
                             </div>
+                        </div>
+                        <div class="col-xs-1 padd">
+                            <img src="<?= BASEURL; ?>/assets/icons/icon-arrow.png" alt="">
                         </div>
                         <div class="col-xs-8 text-center">
                             <div class="col-xs-4 parent-kepuasan">
@@ -97,13 +103,16 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <div class="col-xs-4 saran-option">
+                        <div class="col-xs-3 saran-option">
                             <div class="saran saran-fasilitas" data-value="fasilitas">
                                 <label class="label-kategori" for="saran1">
                                     <img src="<?= BASEURL; ?>/assets/icons/fasilitas.png" alt="fasilitas" width="80px">
                                     <h5 class="text-fasilitas text-saran">Fasilitas</h5>
                                 </label>
                             </div>
+                        </div>
+                        <div class="col-xs-1 padd">
+                            <img src="<?= BASEURL; ?>/assets/icons/icon-arrow.png" alt="">
                         </div>
                         <div class="col-xs-8 text-center">
                             <div class="col-xs-4 parent-kepuasan">
@@ -133,13 +142,16 @@
                         </div>
                     </div>
                     <div class="col-xs-12">
-                        <div class="col-xs-4 saran-option">
+                        <div class="col-xs-3 saran-option">
                             <div class="saran saran-kebersihan" data-value="kebersihan">
                                 <label class="label-kategori" for="saran1">
                                     <img src="<?= BASEURL; ?>/assets/icons/kebersihan.png" alt="kebersihan" width="80px">
                                     <h5 class="text-kebersihan text-saran">Kebersihan</h5>
                                 </label>
                             </div>
+                        </div>
+                        <div class="col-xs-1 padd">
+                            <img src="<?= BASEURL; ?>/assets/icons/icon-arrow.png" alt="">
                         </div>
                         <div class="col-xs-8 text-center">
                             <div class="col-xs-4 parent-kepuasan">
@@ -195,33 +207,39 @@
             </div>
             <div class="col-xs-12 text-center mb-10">
                 <h5>Pilih Tanggal : <input type="text" id="datepicker"></h5>
+                <input id="startDate" type="hidden" name="startDate">
+                <input id="endDate" type="hidden" name="endDate">
                 <button class="col-xs-12 btn btn-success" id="loadbtn">Load</button>
             </div>
         </section>
 
         <section class="table-section">
-            <div class="col-xs-12">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Tanggal</th>
-                            <th>Pelayanan</th>
-                            <th>Hidangan</th>
-                            <th>Fasilitas</th>
-                            <th>Kebersihan</th>
-                        </tr>
-                    </thead>
-                    <tbody class="body-table">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@sda</td>
-                        </tr>
+            <div class="col-xs-12 col-md-6 text-center container-chart">
+                <h5>FASILITAS</h5>
+                <div class="container-chart" style="width: 300px;height: 300px">
+                    <canvas class="chart1"></canvas>
+                </div>
+            </div>
 
-                    </tbody>
-                </table>
+            <div class="col-xs-12 col-md-6 text-center container-chart">
+                <h5>FASILITAS</h5>
+                <div class="container-chart" style="width: 300px;height: 300px">
+                    <canvas class="chart2"></canvas>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6 text-center container-chart">
+                <h5>FASILITAS</h5>
+                <div class="container-chart" style="width: 300px;height: 300px">
+                    <canvas class="chart3"></canvas>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-md-6 text-center container-chart">
+                <h5>FASILITAS</h5>
+                <div class="container-chart" style="width: 300px;height: 300px">
+                    <canvas class="chart4"></canvas>
+                </div>
             </div>
         </section>
 
