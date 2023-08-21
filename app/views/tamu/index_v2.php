@@ -214,33 +214,7 @@
         </section>
 
         <section class="table-section">
-            <div class="col-xs-12 col-md-6 text-center container-chart">
-                <h5>FASILITAS</h5>
-                <div class="container-chart" style="width: 300px;height: 300px">
-                    <canvas class="chart1"></canvas>
-                </div>
-            </div>
 
-            <div class="col-xs-12 col-md-6 text-center container-chart">
-                <h5>FASILITAS</h5>
-                <div class="container-chart" style="width: 300px;height: 300px">
-                    <canvas class="chart2"></canvas>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-md-6 text-center container-chart">
-                <h5>FASILITAS</h5>
-                <div class="container-chart" style="width: 300px;height: 300px">
-                    <canvas class="chart3"></canvas>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-md-6 text-center container-chart">
-                <h5>FASILITAS</h5>
-                <div class="container-chart" style="width: 300px;height: 300px">
-                    <canvas class="chart4"></canvas>
-                </div>
-            </div>
         </section>
 
 

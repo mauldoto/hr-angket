@@ -31,8 +31,28 @@ class Tamu extends Controller
 
     public function report()
     {
+        $master = [];
+
         $date = explode('=', $_SERVER['REQUEST_URI']);
-        $data = $this->model('SurveyTamuModel')->getDataByDate($date[1]);
-        echo json_encode(["data" => $data]);
+
+        $data = $this->model('SurveyTamuModel')->getDataByDateRange($date);
+        foreach ($data as $key => $kepuasan) {
+            foreach ($kepuasan as $key2 => $detail) {
+                $kategori = explode("_", $key2);
+
+                if (isset($master[$kategori[0]])) {
+                    if (isset($master[$kategori[0]][$kategori[1]])) {
+                        $master[$kategori[0]][$kategori[1]] += intval($detail);
+                    } else {
+                        $master[$kategori[0]][$kategori[1]] = intval($detail);
+                    }
+                } else {
+                    $master[$kategori[0]] = [];
+                    $master[$kategori[0]]["name"] = $kategori[0];
+                }
+            }
+        }
+
+        echo json_encode(["data" => $master]);
     }
 }
