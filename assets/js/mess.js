@@ -125,29 +125,40 @@ window.onload = () => {
     });
   }
 
-  $("#datepicker").daterangepicker({
-    startDate: moment().subtract(1, "months"),
-    endDate: moment(),
-    maxDate: moment(),
-    opens: "center",
-    autoUpdateInput: false,
-  });
+  // $("#datepicker").daterangepicker({
+  //   startDate: moment().subtract(1, "months"),
+  //   endDate: moment(),
+  //   maxDate: moment(),
+  //   opens: "center",
+  //   autoUpdateInput: false,
+  // });
 
-  $("#datepicker").on("apply.daterangepicker", function (ev, picker) {
-    $("#startDate").val(picker.startDate.format("MM/DD/YYYY"));
-    $("#endDate").val(picker.endDate.format("MM/DD/YYYY"));
-    $("#datepicker").val(
-      picker.startDate.format("DD-MM-YYYY") +
-        " - " +
-        picker.endDate.format("DD-MM-YYYY")
-    );
-  });
+  // $("#datepicker").on("apply.daterangepicker", function (ev, picker) {
+  //   $("#startDate").val(picker.startDate.format("MM/DD/YYYY"));
+  //   $("#endDate").val(picker.endDate.format("MM/DD/YYYY"));
+  //   $("#datepicker").val(
+  //     picker.startDate.format("DD-MM-YYYY") +
+  //       " - " +
+  //       picker.endDate.format("DD-MM-YYYY")
+  //   );
+  // });
 
-  $("#startDate").datepicker({
-    dateFormat: "dd-mm-yy",
+  $("#startDate").daterangepicker({
+    singleDatePicker: true,
+    autoApply: true,
+    showDropdowns: true,
+    locale: {
+      format: "DD-MM-YYYY",
+    },
+    startDate: moment().startOf("month"),
   });
-  $("#endDate").datepicker({
-    dateFormat: "dd-mm-yy",
+  $("#endDate").daterangepicker({
+    singleDatePicker: true,
+    autoApply: true,
+    showDropdowns: true,
+    locale: {
+      format: "DD-MM-YYYY",
+    },
   });
 
   function renderResults(data) {
