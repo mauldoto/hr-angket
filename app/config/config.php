@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://10.20.22.102/gcm');
+define('BASEURL', 'http://10.20.22.105/gcm');
 
 define('DB_HOST', '10.20.21.10:1521');
 define('DB_USER', 'EPMS_GCM');

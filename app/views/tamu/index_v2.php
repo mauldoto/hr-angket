@@ -203,12 +203,13 @@
 
         <section class="title-section">
             <div class="col-xs-12 col-sm-12 text-center mb-10">
-                <h4>Report Kepuasan Penghuni Mess</h4>
+                <h4>Report Kepuasan Tamu</h4>
             </div>
             <div class="col-xs-12 text-center mb-10">
-                <h5>Pilih Tanggal : <input type="text" id="datepicker"></h5>
-                <input id="startDate" type="hidden" name="startDate">
-                <input id="endDate" type="hidden" name="endDate">
+                <p>Pilih Tanggal Awal: <input id="startDate" type="text" name="startDate"></p>
+                <p>Pilih Tanggal Akhir: <input id="endDate" type="text" name="endDate"></p>
+                <!-- <input id="startDate" type="hidden" name="startDate"> -->
+                <!-- <input id="endDate" type="hidden" name="endDate"> -->
                 <button class="col-xs-12 btn btn-success" id="loadbtn">Load</button>
             </div>
         </section>

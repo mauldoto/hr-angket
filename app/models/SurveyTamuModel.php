@@ -46,8 +46,8 @@ class SurveyTamuModel
 
     public function getDataByDateRange($data)
     {
-        $startDateRaw = date_create_from_format("m/d/Y", substr($data[1], 0, 10));
-        $endDateRaw = date_create_from_format("m/d/Y", $data[2]);
+        $startDateRaw = date_create_from_format("d-m-Y", substr($data[1], 0, 10));
+        $endDateRaw = date_create_from_format("d-m-Y", $data[2]);
 
         $startDate = date_format($startDateRaw, 'dmY');
         $endDate = date_format($endDateRaw, 'dmY');

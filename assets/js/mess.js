@@ -72,16 +72,25 @@ window.onload = () => {
   });
 
   document.querySelector("#loadbtn").addEventListener("click", function () {
-    const date = document.querySelector("#datepicker").value;
-    if (!date) {
-      alert("Silakan pilih tanggal!");
+    const startDate = document.querySelector("#startDate").value;
+    const endDate = document.querySelector("#endDate").value;
+    if (!startDate || !endDate) {
+      alert("Lengkapi tanggal awal dan tanggal akhir!");
+      return;
+    }
+
+    const diffStart = moment(startDate, "DD-MM-YYYY");
+    const diffEnd = moment(endDate, "DD-MM-YYYY");
+
+    if (diffStart > diffEnd) {
+      alert("Tanggal awal tidak boleh lebih dari tanggal akhir!");
       return;
     }
 
     document.querySelector(".table-section").innerHTML = "";
 
-    const startDate = document.querySelector("#startDate").value;
-    const endDate = document.querySelector("#endDate").value;
+    // const startDate = document.querySelector("#startDate").value;
+    // const endDate = document.querySelector("#endDate").value;
 
     getDataByRangeDate(startDate, endDate);
   });
@@ -134,6 +143,13 @@ window.onload = () => {
     );
   });
 
+  $("#startDate").datepicker({
+    dateFormat: "dd-mm-yy",
+  });
+  $("#endDate").datepicker({
+    dateFormat: "dd-mm-yy",
+  });
+
   function renderResults(data) {
     const master = {
       0: "TIDAK PUAS",
@@ -162,6 +178,16 @@ window.onload = () => {
     listKeys.forEach((item) => {
       renderChart(data[item]);
     });
+
+    const tablesection = document.querySelector(".table-section");
+
+    const legendElm = document.createElement("div");
+    legendElm.classList.add("col-xs-12", "col-md-8", "col-md-offset-2");
+    legendElm.style.cssText = "margin-top:30px;";
+    const legendHtml = createChartLegend();
+
+    legendElm.innerHTML = legendHtml;
+    tablesection.appendChild(legendElm);
   }
 
   function renderChart(dataValues) {
@@ -186,7 +212,7 @@ window.onload = () => {
     parentElmChart.appendChild(newChartElm);
 
     const data = {
-      labels: ["Sangat Puas", "Cukup Puas", "Tidak Puas"],
+      // labels: ["Sangat Puas", "Cukup Puas", "Tidak Puas"],
       datasets: [
         {
           label: "Orang",
@@ -199,51 +225,6 @@ window.onload = () => {
           hoverOffset: 4,
         },
       ],
-    };
-
-    const pieOptions = {
-      events: false,
-      // animation: {
-      //   duration: 500,
-      //   easing: "easeOutQuart",
-      //   // onComplete: function () {
-      //   //   var ctx = this.chart.ctx;
-      //   //   ctx.font = Chart.helpers.fontString(
-      //   //     Chart.defaults.global.defaultFontFamily,
-      //   //     "normal",
-      //   //     Chart.defaults.global.defaultFontFamily
-      //   //   );
-      //   //   ctx.textAlign = "center";
-      //   //   ctx.textBaseline = "bottom";
-
-      //   //   console.log(this.data.datasets);
-
-      //   //   // this.data.datasets.forEach(function (dataset) {
-      //   //   //   for (var i = 0; i < dataset.data.length; i++) {
-      //   //   //     // var model =
-      //   //   //     //     dataset._meta[Object.keys(dataset._meta)[0]].data[i]._model,
-      //   //   //     //   total = dataset._meta[Object.keys(dataset._meta)[0]].total,
-      //   //   //     //   mid_radius =
-      //   //   //     //     model.innerRadius +
-      //   //   //     //     (model.outerRadius - model.innerRadius) / 2,
-      //   //   //     //   start_angle = model.startAngle,
-      //   //   //     //   end_angle = model.endAngle,
-      //   //   //     //   mid_angle = start_angle + (end_angle - start_angle) / 2;
-
-      //   //   //     // var x = mid_radius * Math.cos(mid_angle);
-      //   //   //     // var y = mid_radius * Math.sin(mid_angle);
-
-      //   //   //     ctx.fillStyle = "#fff";
-      //   //   //     if (i == 3) {
-      //   //   //       // Darker text color for lighter background
-      //   //   //       ctx.fillStyle = "#444";
-      //   //   //     }
-
-      //   //   //     ctx.fillText(dataset.data[i] + " Org");
-      //   //   //   }
-      //   //   // });
-      //   // },
-      // },
     };
 
     const config = {
@@ -263,7 +244,7 @@ window.onload = () => {
                 },
               },
             },
-            formatter: function (value, context) {
+            formatter: function (value) {
               return value + " Org";
             },
           },
@@ -276,5 +257,22 @@ window.onload = () => {
       .getContext("2d");
 
     new Chart(ctx, config);
+  }
+
+  function createChartLegend() {
+    let legendHtml = `<div class="col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-0 text-center">
+                          <div class="col-xs-2" style="margin-top:5px; width: 20px; height: 10px; background-color: rgb(51, 204, 51);"></div>
+                          <p class="col-xs-10">Sangat Puas</p>
+                      </div>
+                      <div class="col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-0 text-center">
+                          <div class="col-xs-2" style="margin-top:5px; width: 20px; height: 10px; background-color: rgb(255, 205, 86);"></div>
+                          <p class="col-xs-10">Cukup Puas</p>
+                      </div>
+                      <div class="col-xs-8 col-md-4 col-xs-offset-2 col-md-offset-0 text-center">
+                          <div class="col-xs-2" style="margin-top:5px; width: 20px; height: 10px; background-color: rgb(255, 99, 132);"></div>
+                          <p class="col-xs-10">Tidak Puas</p>
+                      </div>`;
+
+    return legendHtml;
   }
 };

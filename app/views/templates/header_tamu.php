@@ -94,11 +94,6 @@
             padding-top: 10px;
         }
 
-        /* .col-xs-4.kepuasan {
-            padding: 10px;
-            margin: 1px;
-        } */
-
         .kepuasan.sangat-puas:hover {
             background-color: limegreen;
         }
@@ -136,46 +131,6 @@
             display: block;
             margin: 0 auto;
         }
-
-        /* .saran.saran-pelayanan:hover {
-            background-color: powderblue;
-
-        }
-
-        .saran.saran-hidangan:hover {
-            background-color: navajowhite;
-
-        }
-
-        .saran.saran-fasilitas:hover {
-            background-color: thistle;
-
-        }
-
-        .saran.saran-kebersihan:hover {
-            background-color: lightsalmon;
-
-        }
-
-        .saran.saran-pelayanan.active {
-            background-color: powderblue;
-
-        }
-
-        .saran.saran-hidangan.active {
-            background-color: navajowhite;
-
-        }
-
-        .saran.saran-fasilitas.active {
-            background-color: thistle;
-
-        }
-
-        .saran.saran-kebersihan.active {
-            background-color: lightsalmon;
-
-        } */
 
         .radio-kepuasan {
             position: absolute;
