@@ -253,12 +253,16 @@ window.onload = () => {
                 color: "white",
                 font: {
                   weight: "bold",
-                  size: 18,
+                  size: 15,
                 },
               },
             },
             formatter: function (value) {
-              return value + " Org";
+              if (value > 0) {
+                return value + " Org";
+              } else {
+                return "";
+              }
             },
           },
         },

@@ -9,7 +9,7 @@
   <div class="footer-inner">
     <div class="footer-content">
       <span class="bigger-120">
-        <span class="blue bolder">USTP X GCM | HR Survey Kepuasan Mess</span>
+        <span class="blue bolder">USTP X GCM | HR Survey Kepuasan Tamu</span>
         &copy; <?= date('Y') ?>
       </span>
 
