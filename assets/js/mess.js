@@ -211,6 +211,8 @@ window.onload = () => {
       "container-chart"
     );
 
+    newChartElm.style.cssText = "margin-top: 20px;";
+
     let expHtml = "<h5>" + dataValues.name + "</h5>";
     expHtml +=
       '<div class="container-chart" style="width: 300px;height: 300px">';
