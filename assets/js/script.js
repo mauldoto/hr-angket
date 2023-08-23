@@ -11,7 +11,7 @@ $(function () {
 
   $("#empId").on("change", function (e) {
     let empId = $("#empId").val();
-    let url = $(this).data("url") + "/" + empId + "/json";
+    let url = $(this).data("url") + "/angket/" + empId + "/json";
     getEmpData(url);
   });
 
@@ -157,7 +157,7 @@ function getEmployeeDetails() {
   const nik = $("[name='nik']").val();
 
   $.ajax({
-    url: baseUrl + "/home/detail?nik=" + nik,
+    url: baseUrl + "/angket/detail?nik=" + nik,
     type: "get",
     success: function (results) {
       const data = JSON.parse(results);
