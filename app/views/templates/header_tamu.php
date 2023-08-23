@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace-skins.min.css" />
     <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/ace-rtl.min.css" />
     <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/select2.min.css" />
+    <link rel="stylesheet" href="<?= BASEURL; ?>/assets/css/daterangepicker.min.css" />
     <style>
         .main-container,
         .page-content {
@@ -29,6 +30,13 @@
         .form-content {
             background-color: white;
             padding: 1rem;
+        }
+
+        .table-content {
+            margin-top: 3rem;
+            padding: 1rem;
+            background-color: white;
+
         }
 
         hr {
@@ -86,11 +94,6 @@
             padding-top: 10px;
         }
 
-        /* .col-xs-4.kepuasan {
-            padding: 10px;
-            margin: 1px;
-        } */
-
         .kepuasan.sangat-puas:hover {
             background-color: limegreen;
         }
@@ -115,53 +118,18 @@
             background-color: salmon;
         }
 
-        label * {
-            cursor: pointer;
-        }
-
         .saran {
             padding-top: 10px;
             border-radius: 10%;
         }
 
-        .saran.saran-pelayanan:hover {
-            background-color: powderblue;
-
+        .padd {
+            padding-top: 4rem;
         }
 
-        .saran.saran-hidangan:hover {
-            background-color: navajowhite;
-
-        }
-
-        .saran.saran-fasilitas:hover {
-            background-color: thistle;
-
-        }
-
-        .saran.saran-kebersihan:hover {
-            background-color: lightsalmon;
-
-        }
-
-        .saran.saran-pelayanan.active {
-            background-color: powderblue;
-
-        }
-
-        .saran.saran-hidangan.active {
-            background-color: navajowhite;
-
-        }
-
-        .saran.saran-fasilitas.active {
-            background-color: thistle;
-
-        }
-
-        .saran.saran-kebersihan.active {
-            background-color: lightsalmon;
-
+        .container-chart {
+            display: block;
+            margin: 0 auto;
         }
 
         .radio-kepuasan {

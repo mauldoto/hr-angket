@@ -8,7 +8,7 @@
 			?>
 		</div>
 
-		<form id="formID" action="<?= BASEURL; ?>/home/inputmultiple" method="post">
+		<form id="formID" action="<?= BASEURL; ?>/angket/inputmultiple" method="post">
 			<section class="title-section">
 				<div class="col-xs-12 col-sm-12 text-center mb-10">
 					<h3><strong>ANGKET KARYAWAN</strong></h3>
@@ -183,5 +183,5 @@
 </div>
 
 <script>
-	document.getElementById("empId").focus();
+	// document.getElementById("empId").focus();
 </script>
