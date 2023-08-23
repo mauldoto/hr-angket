@@ -54,10 +54,10 @@ class AngketModel
             $query = "UPDATE hr_angket_jawaban set JAWABAN=:jawaban, INPUTDATE=:inputdate, ALASAN=:alasan WHERE NIK=:nik and NO=:no";
         } else {
             $query = "INSERT INTO hr_angket_jawaban (NIK, NO, JAWABAN, INPUTDATE, ALASAN) 
-            VALUES(:nik, :no, :jawaban, :inputdate, :alasan)";
+            VALUES(:nik, :no, :jawaban, TO_DATE(:inputdate, 'ddmmyyyy'), :alasan)";
         }
 
-        $data['inputdate'] = strtoupper(date('d-M-y'));
+        $data['inputdate'] = date('dmY');
 
         $this->db->query($query);
 
@@ -77,7 +77,7 @@ class AngketModel
             $data['angket'] = $this->getAllData();
             $delete = '';
             $query = "INSERT INTO hr_angket_jawaban (NIK, NO, JAWABAN, INPUTDATE, ALASAN) 
-                VALUES(:nik, :no, :jawaban, :inputdate, :alasan)";
+                VALUES(:nik, :no, :jawaban, TO_DATE(:inputdate, 'ddmmyyyy'), :alasan)";
 
             $this->db->beginTransaction();
 
@@ -95,7 +95,7 @@ class AngketModel
                 $_POSTMOD['no'] = $angket['NO'];
                 $_POSTMOD['jawaban'] = isset($dataPOST['angket_' . $angket['NO']]) ? $dataPOST['angket_' . $angket['NO']] : '';
                 $_POSTMOD['alasan'] = isset($dataPOST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']]) ? $dataPOST['alasan_angket_' . $angket['NO'] . $_POSTMOD['jawaban']] : '';
-                $_POSTMOD['inputdate'] = strtoupper(date('d-M-y'));
+                $_POSTMOD['inputdate'] = date('dmY');
 
                 $this->db->executeOracle($_POSTMOD);
 

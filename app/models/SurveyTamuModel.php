@@ -14,11 +14,11 @@ class SurveyTamuModel
     public function saveData($data)
     {
         $query = "INSERT INTO hr_kepuasanpelanggan (TANGGAL, PELAYANAN, HIDANGAN, KEBERSIHAN, FASILITAS, ID) 
-        VALUES(:inputdate, :pelayanan, :hidangan, :kebersihan, :fasilitas, :id)";
+        VALUES(TO_DATE(:inputdate, 'ddmmyyyy'), :pelayanan, :hidangan, :kebersihan, :fasilitas, :id)";
 
         $this->db->query($query);
-
-        $_POSTMOD['inputdate'] = strtoupper(date('d-M-y'));
+        var_dump(date('dmY'));
+        $_POSTMOD['inputdate'] = date('dmY');
         $_POSTMOD['pelayanan'] = $data['pelayanan'];
         $_POSTMOD['hidangan'] = $data['hidangan'];
         $_POSTMOD['kebersihan'] = $data['kebersihan'];
