@@ -17,7 +17,7 @@ class SurveyTamuModel
         VALUES(TO_DATE(:inputdate, 'ddmmyyyy'), :pelayanan, :hidangan, :kebersihan, :fasilitas, :id)";
 
         $this->db->query($query);
-        var_dump(date('dmY'));
+
         $_POSTMOD['inputdate'] = date('dmY');
         $_POSTMOD['pelayanan'] = $data['pelayanan'];
         $_POSTMOD['hidangan'] = $data['hidangan'];
