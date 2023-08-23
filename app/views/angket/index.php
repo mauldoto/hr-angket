@@ -183,5 +183,5 @@
 </div>
 
 <script>
-	document.getElementById("empId").focus();
+	// document.getElementById("empId").focus();
 </script>
